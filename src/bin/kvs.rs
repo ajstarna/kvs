@@ -1,4 +1,5 @@
 use clap::{Parser, Subcommand};
+use kvs::KvStore;
 
 /// Simple program to greet a person
 #[derive(Parser)]
