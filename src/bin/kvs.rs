@@ -5,17 +5,6 @@ use kvs::KvStore;
 #[derive(Parser)]
 #[clap(author, version, about, long_about = None)]
 struct Cli {
-    /// Name of the person to greet
-
-    /*
-    #[clap(short, long)]    
-    name: String,
-    
-    /// Number of times to greet
-    #[clap(short, long, default_value_t = 1)]
-    count: u8,
-     */
-
     #[clap(subcommand)]
     command: Commands,
 }
@@ -25,14 +14,14 @@ enum Commands {
     /// Adds files to myapp
     Set {
         key: String,
-        value: String        
+        value: String,
     },
     Get {
-        key: String,        
+        key: String,
     },
     Rm {
-        key: String,        
-    }
+        key: String,
+    },
 }
 
 fn main() {
@@ -42,7 +31,7 @@ fn main() {
             println!("'kvs set' was used, key = {:?}, value = {:?}", key, value);
             eprintln!("unimplemented");
             panic!();
-        },
+        }
         Commands::Get { key } => {
             println!("'kvs get' was used, key = {:?}", key);
             eprintln!("unimplemented");
