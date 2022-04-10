@@ -15,7 +15,7 @@ impl KvStore {
     }
 
     pub fn remove(&mut self, key: String) {
-        panic!();        
+        panic!();
     }
     
 }
